@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:guess_the_flag/gradient_container.dart';
+import 'package:guess_the_flag/container_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,12 +32,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        backgroundColor: const Color.fromARGB(255, 100, 84, 84),
-      ),
-      body: const GradientContainer(),
-    );
+    return const ContainerTheme();
   }
 }

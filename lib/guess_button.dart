@@ -23,11 +23,14 @@ int position = solutions.indexOf(correctAnswer);
 class _GuessButtonState extends State<GuessButton> {
   var buttonPressed = [false, false, false, false];
 
-  void checkAnswer(int number, String text) {
+  Future<void> checkAnswer(int number, String text) async {
     if (text == correctAnswer) {
       setState(() {
         buttonPressed[number] = true;
       });
+      await Future.delayed(const Duration(milliseconds: 200));
+      skip();
+      return;
     }
     if (text != correctAnswer) {
       setState(() {
